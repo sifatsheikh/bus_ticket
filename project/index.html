@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bus Ticket Booking</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>Bus Ticket Booking</h1>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="ticket-form">
+          <h2>Booking Details</h2>
+          <form id="ticketForm">
+            <div class="mb-3">
+              <label for="passengerName" class="form-label">Passenger Name <span class="text-danger">*</span>:</label>
+              <input type="text" id="passengerName" class="form-control" placeholder="Enter your name" required>
+            </div>
+            <div class="mb-3">
+              <label for="phoneNumber" class="form-label">Phone Number:</label>
+              <input type="text" id="phoneNumber" class="form-control" placeholder="Enter your phone number">
+            </div>
+            <div class="mb-3">
+              <label for="startPoint" class="form-label">Starting Point <span class="text-danger">*</span>:</label>
+              <select id="startPoint" class="form-select" required>
+                <option value="">-- Select District --</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="endPoint" class="form-label">Destination <span class="text-danger">*</span>:</label>
+              <select id="endPoint" class="form-select" required>
+                <option value="">-- Select District --</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="busName" class="form-label">Select Bus <span class="text-danger">*</span>:</label>
+              <select id="busName" class="form-select" required>
+                <option value="">-- Select Bus --</option>
+                <option value="Green Line">Green Line</option>
+<option value="Soudia Paribahan">Soudia Paribahan</option>
+<option value="Shyamoli Paribahan">Shyamoli Paribahan</option>
+<option value="Desh Travels">Desh Travels</option>
+<option value="Hanif Enterprise">Hanif Enterprise</option>
+<option value="TR Travels">TR Travels</option>
+<option value="Perfect Paribahan">Perfect Paribahan</option>
+<option value="Eagle Paribahan">Eagle Paribahan</option>
+<option value="STC Bus Service">STC Bus Service</option>
+<option value="Mayer Doa Paribahan">Mayer Doa Paribahan</option>
+<option value="Shabin Paribahan">Shabin Paribahan</option>
+<option value="Kazi Transport">Kazi Transport</option>
+<option value="Barisal Express">Barisal Express</option>
+<option value="Cityline Paribahan">Cityline Paribahan</option>
+<option value="Panchagarh Paribahan">Panchagarh Paribahan</option>
+<option value="Uttara Motors">Uttara Motors</option>
+<option value="SR Travels">SR Travels</option>
+<option value="Dolphin Travels">Dolphin Travels</option>
+<option value="Kolkata Bus Service">Kolkata Bus Service</option>
+<option value="Akash Paribahan">Akash Paribahan</option>
+<option value="Sky Line Paribahan">Sky Line Paribahan</option>
+<option value="Rocket Paribahan">Rocket Paribahan</option>
+<option value="Jahan Paribahan">Jahan Paribahan</option>
+<option value="Nabil Paribahan">Nabil Paribahan</option>
+<option value="Rajdhani Paribahan">Rajdhani Paribahan</option>
+<option value="Silk Route">Silk Route</option>
+<option value="Shahjalal Paribahan">Shahjalal Paribahan</option>
+<option value="Sakura Paribahan">Sakura Paribahan</option>
+<option value="Agami Paribahan">Agami Paribahan</option>
+<option value="Chattala Paribahan">Chattala Paribahan</option>
+<option value="Purbasha Paribahan">Purbasha Paribahan</option>
+<option value="Vira Travels">Vira Travels</option>
+<option value="Golden Line">Golden Line</option>
+<option value="Tungipara Express">Tungipara Express</option>
+
+                <option value="Shohagh Paribahan">Shohagh Paribahan</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="fare" class="form-label">Fare per Seat (BDT) <span class="text-danger">*</span>:</label>
+              <input type="number" id="fare" class="form-control" placeholder="Enter fare per seat" required>
+            </div>
+            <div class="text-center">
+              <button type="button" id="generateTicket" class="btn btn-primary">Generate Ticket</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="seat-selection">
+          <h3>Seat Selection</h3>
+          <div class="seat-container" id="seatContainer">
+            <!-- Seat options will be added here -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Payment Section -->
+    <div class="payment-section">
+      <h2 class="text-center">Payment</h2>
+      <p class="text-center">Select a payment method to complete your booking.</p>
+      
+      <div class="payment-options">
+        <div class="payment-option" id="bKashOption">
+          <img src="assets/bkash-icon.png" alt="bKash">
+          <h5>bKash</h5>
+        </div>
+        <div class="payment-option" id="NagadOption">
+          <img src="assets/nagad-icon.png" alt="Nagad">
+          <h5>Nagad</h5>
+        </div>
+        <div class="payment-option" id="visaOption">
+          <img src="assets/visa-icon.png" alt="Visa">
+          <h5>Visa</h5>
+        </div>
+        <div class="payment-option" id="mastercardOption">
+          <img src="assets/mastercard-icon.png" alt="MasterCard">
+          <h5>MasterCard</h5>
+        </div>
+      </div>
+      
+      <div class="d-flex justify-content-center mt-4">
+        <button class="payment-btn" id="payNowBtn">Proceed to Payment</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- <footer></footer> -->
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About Us</h3>
+          <p>We provide seamless bus ticket booking services across Bangladesh. Travel with ease and comfort!</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p>Email: support@busbooking.com</p>
+          <p>Phone: +880 1234-567890</p>
+          <p>Address: Dhaka, Bangladesh</p>
+          <p>Create: Md sifat shaikh</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 BusBooking.com | All Rights Reserved</p>
+      </div>
+    </div>
+  </footer>
+  
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
